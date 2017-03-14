@@ -61,7 +61,8 @@ char	*read_entire_fd(int fd)
 		len += bytes_read;
 		bytes_read = read(fd, tmp, BUFF_SIZE);
 	}
-	retstr[len] = '\0';
+	if (retstr)
+		retstr[len] = '\0';
 	return (retstr);
 }
 
